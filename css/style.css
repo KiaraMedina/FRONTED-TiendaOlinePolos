@@ -1,0 +1,258 @@
+:root {
+    --fuentePrincipal: 'Krub', cursive;
+    /*en caso no encuentre la fuente entonces lo mostrara como cursiva*/
+    --primario: rgb(57, 80, 3);
+    --primario-oscuro: rgb(7, 100, 112);
+    --secundario: #012722;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    line-height: 2;
+    font-size: 2rem;
+}
+
+body {
+    min-height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a90329+0,6d0019+100 */
+    background-color: var(--primario-oscuro);
+    /* IE6-9 */
+}
+
+.lista-producto a {
+    text-decoration: none;
+}
+
+.lista-producto .producto:hover {
+    background-color: #4b4a4a;
+}
+
+
+/*-------------------------------*/
+
+body .footer-fijo {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body .footer-fijo main {
+    flex: 1;
+}
+
+
+/*------------------------------*/
+
+h1 {
+    color: #FFCE00;
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--fuentePrincipal);
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 1000px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.header {
+    display: grid;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.barra {
+    padding: 1rem 0;
+    /*arriba y abajo 1 y alos costados 0*/
+}
+
+.barra .nav {
+    display: grid;
+    /*lo coloca como una columna*/
+    grid-template-columns: repeat(3, 180px);
+    grid-column-gap: 1rem;
+    justify-content: center;
+    /*lo llega a centrar*/
+    background-color: var(--secundario);
+}
+
+.barra .nav:last-of-type {
+    margin: 0;
+}
+
+.barra .nav a {
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barra .nav a:hover {
+    background-color: #FFCE00;
+    color: #000000;
+    font-weight: bold;
+}
+
+.lista-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*para fraccionar 2 la misma cantidad de una fraccion*/
+    grid-gap: 2rem;
+    /*es para darles una separacion*/
+}
+
+@media (min-width:768px) {
+    .lista-producto {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto {
+    background-color: var(--secundario);
+    padding: 1rem;
+}
+
+.contenido-producto p {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 2;
+}
+
+.contenido-producto .titulo {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.contenido-producto .precio {
+    font-size: 2.8rem;
+    color: #FFCE00;
+    font-weight: bold;
+}
+
+.grafico {
+    min-height: 300px;
+    /*para que no se pierda le damos maximo 300*/
+    grid-column: 1/3;
+}
+
+.grafico-1 {
+    background-image: url(../img/grafico1.jpg);
+    grid-row: 2/3;
+}
+
+.grafico-2 {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8/9;
+}
+
+@media (min-width:768px) {
+    .grafico-2 {
+        background-image: url(../img/grafico2.jpg);
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+
+/*@media (min-width:768px) {
+    .contenedor-informacion {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 2rem;
+        /*para separarlos*/
+
+.contenedor-informacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 2rem;
+}
+
+.imagen-producto {
+    width: 100%;
+}
+
+
+/*Otra manera de evitar el media cuery*/
+
+.footer {
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    /*separacion del footer con el contenedor*/
+}
+
+.copyright {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.formulario-pedido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+}
+
+.campo {
+    background-color: transparent;
+    border: 5px solid #ffffff;
+    font-family: var(--fuentePrincipal);
+    padding: 1rem;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+.talla {
+    -webkit-appearance: none;
+    border-radius: 0;
+    grid-column: 1/3;
+}
+
+option {
+    color: #000000;
+    font-weight: bold;
+}
+
+.boton {
+    background-color: #FFCE00;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    border: none;
+    transition: background-color .3s ease-in-out;
+    grid-column: 1/4;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: #967d19;
+}
